@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :projects, only: %i[index show]
   resources :chapters, only: %i[index show]
   resources :countries, only: %i[index show]
+  resources :learning_materials, only: %i[index]
   devise_for :users, controllers: {
     registrations: 'users/registrations', # Override devise registration controller
     sessions: 'users/sessions',

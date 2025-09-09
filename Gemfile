@@ -24,7 +24,9 @@ gem 'premailer-rails', '~> 1.12' # This gem is a drop in solution for styling HT
 gem 'puma', '~> 6.0' # Use the Puma web server [https://github.com/puma/puma]
 gem 'rails', '~> 7.2.2.1' # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 # Pagination
-gem 'kaminari', '~> 1.2'
+gem 'pagy', '~> 9.4.0'
+# gem 'kaminari'
+# gem 'kaminari-tailwind'
 gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
 # An ActionMailer adapter to send email using SendGrid's HTTPS Web API (instead of SMTP).
 gem 'rack-attack' # Rack middleware for blocking & throttling abusive requests

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_15_124125) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_07_005500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,16 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_15_124125) do
     t.index ["name"], name: "index_chapters_on_name", unique: true
   end
 
-  create_table "conferences", force: :cascade do |t|
-    t.string "title", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.string "location"
-    t.integer "status", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -75,6 +65,19 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_15_124125) do
     t.boolean "enabled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "learning_materials", force: :cascade do |t|
+    t.string "title"
+    t.string "thumbnail"
+    t.string "link"
+    t.integer "level"
+    t.boolean "featured"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["featured"], name: "index_learning_materials_on_featured"
+    t.index ["level"], name: "index_learning_materials_on_level"
+    t.index ["title"], name: "index_learning_materials_on_title"
   end
 
   create_table "motor_alert_locks", force: :cascade do |t|

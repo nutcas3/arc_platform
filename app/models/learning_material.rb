@@ -20,18 +20,12 @@
 #  index_learning_materials_on_title     (title)
 #
 class LearningMaterial < ApplicationRecord
-  # Map app-level attribute names to the current DB column names
-  # DB columns (per schema.rb): thumbnail, link
-  # App code expects: thumbnail_url, link_url
-  alias_attribute :thumbnail_url, :thumbnail
-  alias_attribute :link_url, :link
-
   enum :level, { beginner: 0, intermediate: 1, expert: 2 }
 
   validates :title, presence: true
   validates :level, presence: true
-  validates :link_url, presence: true, format: URI::DEFAULT_PARSER.make_regexp(%w[http https])
-  validates :thumbnail_url, allow_blank: true, format: URI::DEFAULT_PARSER.make_regexp(%w[http https])
+  validates :link, presence: true, format: URI::DEFAULT_PARSER.make_regexp(%w[http https])
+  validates :thumbnail, allow_blank: true, format: URI::DEFAULT_PARSER.make_regexp(%w[http https])
 
   scope :featured, -> { where(featured: true) }
   scope :by_level, ->(lvl) { lvl.present? ? where(level: levels[lvl]) : all }

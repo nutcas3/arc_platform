@@ -9,8 +9,8 @@ class CreateLearningMaterials < ActiveRecord::Migration[7.2]
     create_table :learning_materials do |t|
       t.string :title, null: false
       t.integer :level, null: false, default: 0
-      t.string :thumbnail_url
-      t.string :link_url, null: false
+      t.string :thumbnail
+      t.string :link, null: false
       t.boolean :featured, null: false, default: false
       t.text :description
 

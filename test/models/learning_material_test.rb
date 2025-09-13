@@ -35,8 +35,7 @@ class LearningMaterialTest < ActiveSupport::TestCase
     assert_not lm.valid?
     assert_includes lm.errors.attribute_names, :title
     assert_includes lm.errors.attribute_names, :level
-    # model uses alias_attribute :link_url, :link
-    assert_includes lm.errors.attribute_names, :link_url
+    assert_includes lm.errors.attribute_names, :link
   end
 
   test 'enum levels' do

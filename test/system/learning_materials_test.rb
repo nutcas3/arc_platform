@@ -4,10 +4,10 @@ require 'application_system_test_case'
 
 class LearningMaterialsTest < ApplicationSystemTestCase
   test 'view learning materials index with search and filter' do
-    LearningMaterial.create!(title: 'Ruby Basics', level: :beginner, link_url: 'https://ruby-lang.org',
-                             thumbnail_url: 'https://example.com/a.png')
-    LearningMaterial.create!(title: 'Rails Advanced', level: :expert, link_url: 'https://rubyonrails.org',
-                             thumbnail_url: 'https://example.com/b.png', featured: true)
+    LearningMaterial.create!(title: 'Ruby Basics', level: :beginner, link: 'https://ruby-lang.org',
+                             thumbnail: 'https://example.com/a.png')
+    LearningMaterial.create!(title: 'Rails Advanced', level: :expert, link: 'https://rubyonrails.org',
+                             thumbnail: 'https://example.com/b.png', featured: true)
 
     visit learning_materials_path
 

@@ -24,7 +24,7 @@ module Users
       self.resource = resource_class.new(sign_in_params)
       clean_up_passwords(resource)
       flash.now[:alert] = I18n.t('turnstile.errors.login_failed')
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 end

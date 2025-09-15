@@ -20,10 +20,12 @@
 #  index_learning_materials_on_title     (title)
 #
 class LearningMaterial < ApplicationRecord
+  # Override DB default (0) so new records without an explicit level don't silently default to beginner.
+  attribute :level, :integer, default: nil
   enum :level, { beginner: 0, intermediate: 1, expert: 2 }
 
   validates :title, presence: true
-  validates :level, presence: true
+  validates :level, inclusion: { in: levels.keys }
   validates :link, presence: true, format: URI::DEFAULT_PARSER.make_regexp(%w[http https])
   validates :thumbnail, allow_blank: true, format: URI::DEFAULT_PARSER.make_regexp(%w[http https])
 

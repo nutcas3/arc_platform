@@ -39,7 +39,7 @@ module Users
         end
       end
 
-      assert_response :unprocessable_entity
+      assert_response :unprocessable_content
       assert_match 'error', response.body
     end
   end

@@ -48,7 +48,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
       sign_in_with_turnstile(token: 'invalid-token')
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
     assert_select '.alert-error' do
       assert_select 'span', I18n.t('turnstile.errors.login_failed')
     end
@@ -63,7 +63,7 @@ class UserFlowTest < ActionDispatch::IntegrationTest
       sign_in_with_turnstile # no token
     end
 
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
     assert_select '.alert-error' do
       assert_select 'span', I18n.t('turnstile.errors.login_failed')
     end

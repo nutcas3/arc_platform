@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.17.2'
+lock '~> 3.19.2'
 
 set :user, 'ubuntu'
 
 set :application, 'arc_platform'
-set :repo_url, 'git@github.com:banta/arc_platform.git'
+set :repo_url, 'git@github.com:Judahsan/arc_platform.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

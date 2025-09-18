@@ -28,7 +28,7 @@ module Users
 
     def test_user_cannot_login_with_invalid_credentials
       sign_in_with_turnstile!(email: @user.email, password: 'wrong')
-      assert_response :unprocessable_entity
+      assert_response :unprocessable_content
       assert_select 'form#new_user'
     end
 

@@ -18,24 +18,24 @@ gem 'jbuilder' # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jsbundling-rails' # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
 gem 'mini_magick', '~> 4.12'
 # Motor Admin allows you to deploy a no-code admin panel for your application in less than a minute
-gem 'motor-admin', '~> 0.4.7'
-gem 'pg', '~> 1.1' # Use postgresql as the database for Active Record
+gem 'motor-admin', '>= 0.4.30'
+gem 'pg', '~> 1.5' # Use postgresql as the database for Active Record
 gem 'premailer-rails', '~> 1.12' # This gem is a drop in solution for styling HTML emails with CSS
 gem 'puma', '~> 6.0' # Use the Puma web server [https://github.com/puma/puma]
-gem 'rails', '~> 7.2.2.1' # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 8.0' # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 # Pagination
 gem 'pagy', '~> 9.4.0'
 # gem 'kaminari'
 # gem 'kaminari-tailwind'
-gem 'redis', '~> 4.0' # Use Redis adapter to run Action Cable in production
+gem 'redis', '~> 5.0' # Use Redis adapter to run Action Cable in production
 # An ActionMailer adapter to send email using SendGrid's HTTPS Web API (instead of SMTP).
-gem 'rack-attack' # Rack middleware for blocking & throttling abusive requests
+gem 'rack-attack', '>= 6.7' # Rack middleware for blocking & throttling abusive requests (Rack 3 compatible)
 gem 'sendgrid-actionmailer', '~> 3.2'
-gem 'simple_form', '~> 5.1' # Gem to pimp up forms
+gem 'simple_form', '~> 5.3' # Gem to pimp up forms
 gem 'sitemap_generator' # A dynamic sitemap generator gem for the Ruby on Rails framework
-gem 'sprockets-rails' # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'stimulus-rails' # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'turbo-rails' # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem 'sprockets-rails', '>= 3.5' # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem 'stimulus-rails', '>= 1.3' # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem 'turbo-rails', '>= 2.0' # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'rails_cloudflare_turnstile'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -62,10 +62,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
-  gem 'annotate', '~> 3.2', '>= 3.2.0'
-
   # Capistrano - deployment gems
-  gem 'capistrano', '~> 3.11'
+  gem 'capistrano', '~> 3.19'
   gem 'capistrano-asdf'
   gem 'capistrano-passenger', '~> 0.2.0'
   gem 'capistrano-rails', '~> 1.4'

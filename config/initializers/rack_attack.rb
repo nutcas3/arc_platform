@@ -2,6 +2,9 @@
 
 # Configuration for rack-attack to prevent spam and brute force attacks
 class Rack::Attack
+  # Disable Rack::Attack in test environment to avoid interfering with specs
+  Rack::Attack.enabled = !Rails.env.test?
+
   ### Configure Cache ###
   # Use Redis as the cache store for rack-attack
   Rack::Attack.cache.store = ActiveSupport::Cache::RedisCacheStore.new

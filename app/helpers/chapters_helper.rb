@@ -19,7 +19,7 @@ module ChaptersHelper
   FEATURED_SPONSORS = [
     { image: 'sponsors/current/solutech_official.svg', link: 'https://solutech.co.ke', alt: 'Solutech' },
     { image: 'sponsors/current/app_signal.png', link: 'https://www.appsignal.com', alt: 'App Signal' },
-    { image: 'sponsors/previous/shopify.webp', link: 'https://www.shopify.com/', alt: 'Shopify' },
+    { image: 'sponsors/current/ruby_central.png', link: 'https://rubycentral.org/', alt: 'Ruby Central' },
     { image: 'sponsors/current/kopo_kopo.png', link: 'https://kopokopo.co.ke', alt: 'Kopo Kopo' },
     { image: 'sponsors/current/finplus.png', link: 'https://finplusgroup.com', alt: 'Finplus Group' },
     { image: 'sponsors/current/typesense-logo.png', link: 'https://typesense.org/', alt: 'Typesense' },
@@ -32,11 +32,9 @@ module ChaptersHelper
   PREVIOUS_SPONSORS = [
     { image: 'sponsors/previous/shopify.webp', link: 'https://www.shopify.com/', alt: 'Shopify' },
     { image: 'sponsors/previous/microverse.png', link: 'https://www.microverse.org/', alt: 'Microverse' },
-    { image: 'sponsors/previous/ruby_central.png', link: 'https://rubycentral.org/', alt: 'Ruby Central' },
     { image: 'sponsors/previous/planet_argon.png', link: 'https://www.planetargon.com', alt: 'Planet Argon' },
     { image: 'sponsors/previous/nairobits.png', link: 'https://www.nairobits.com/', alt: 'Nairobits' },
     { image: 'sponsors/previous/turing.png', link: 'https://www.turing.com/', alt: 'Turing' },
-    { image: 'sponsors/previous/kopokopo.png', link: 'https://kopokopo.co.ke', alt: 'Kopokopo' },
     { image: 'sponsors/previous/kwara.png', link: 'https://kwara.com/', alt: 'Kwara' },
     { image: 'sponsors/previous/ihub.png', link: 'https://ihub.co.ke/', alt: 'iHub, Nairobi' },
     { image: 'sponsors/previous/friendly_rb.jpg', link: 'https://friendlyrb.com/', alt: 'FriendlyRB' },

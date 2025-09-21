@@ -18,24 +18,29 @@ module ChaptersHelper
 
   FEATURED_SPONSORS = [
     { image: 'sponsors/current/solutech_official.svg', link: 'https://solutech.co.ke', alt: 'Solutech' },
-    { image: 'sponsors/current/microverse.png', link: 'https://www.microverse.org/', alt: 'Microverse' },
     { image: 'sponsors/current/app_signal.png', link: 'https://www.appsignal.com', alt: 'App Signal' },
-    { image: 'sponsors/current/ruby_central.png', link: 'https://rubycentral.org/', alt: 'Ruby Central' },
-
+    { image: 'sponsors/previous/shopify.webp', link: 'https://www.shopify.com/', alt: 'Shopify' },
     { image: 'sponsors/current/kopo_kopo.png', link: 'https://kopokopo.co.ke', alt: 'Kopo Kopo' },
     { image: 'sponsors/current/finplus.png', link: 'https://finplusgroup.com', alt: 'Finplus Group' },
-    { image: 'sponsors/current/planet_argon.png', link: 'https://www.planetargon.com', alt: 'Planet Argon' },
-    { image: 'sponsors/current/friendly_rb.jpg', link: 'https://friendlyrb.com/', alt: 'FriendlyRB' },
-    { image: 'sponsors/current/kca.png', link: 'https://www.kcau.ac.ke', alt: 'KCA University' },
-    { image: 'sponsors/current/nairobits.png', link: 'https://www.nairobits.com/', alt: 'Nairobits' }
+    { image: 'sponsors/current/typesense-logo.png', link: 'https://typesense.org/', alt: 'Typesense' },
+    { image: 'sponsors/current/daystar.png', link: 'https://www.daystar.ac.ke/', alt: 'Daystar' },
+    { image: 'sponsors/current/prosper.png', link: 'https://www.prosperhedge.com/', alt: 'Prosper Hedge' },
+    { image: 'sponsors/current/gurzu.png', link: 'https://gurzu.com/', alt: 'Gurzu' },
+    { image: 'sponsors/current/must-company.png', link: 'https://must.company/', alt: 'Must Company' }
   ].freeze
 
   PREVIOUS_SPONSORS = [
     { image: 'sponsors/previous/shopify.webp', link: 'https://www.shopify.com/', alt: 'Shopify' },
+    { image: 'sponsors/previous/microverse.png', link: 'https://www.microverse.org/', alt: 'Microverse' },
+    { image: 'sponsors/previous/ruby_central.png', link: 'https://rubycentral.org/', alt: 'Ruby Central' },
+    { image: 'sponsors/previous/planet_argon.png', link: 'https://www.planetargon.com', alt: 'Planet Argon' },
+    { image: 'sponsors/previous/nairobits.png', link: 'https://www.nairobits.com/', alt: 'Nairobits' },
     { image: 'sponsors/previous/turing.png', link: 'https://www.turing.com/', alt: 'Turing' },
     { image: 'sponsors/previous/kopokopo.png', link: 'https://kopokopo.co.ke', alt: 'Kopokopo' },
     { image: 'sponsors/previous/kwara.png', link: 'https://kwara.com/', alt: 'Kwara' },
     { image: 'sponsors/previous/ihub.png', link: 'https://ihub.co.ke/', alt: 'iHub, Nairobi' },
+    { image: 'sponsors/previous/friendly_rb.jpg', link: 'https://friendlyrb.com/', alt: 'FriendlyRB' },
+    { image: 'sponsors/previous/kca.png', link: 'https://www.kcau.ac.ke', alt: 'KCA University' },
     { image: 'sponsors/previous/andela.png', link: 'https://andela.com/', alt: 'Andela' }
   ].freeze
 

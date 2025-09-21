@@ -38,7 +38,13 @@ gem 'stimulus-rails', '>= 1.3' # Hotwire's modest JavaScript framework [https://
 gem 'turbo-rails', '>= 2.0' # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'rails_cloudflare_turnstile'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: %i[windows jruby]
+
+# Error monitoring
+# https://docs.sentry.io/platforms/ruby/guides/rails/
+# sentry-rails brings Rails integration; sentry-ruby is the core SDK
+gem 'sentry-rails'
+gem 'sentry-ruby'
 
 # gem "kredis" # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -47,7 +53,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', '~> 1.10.0', platforms: %i[mri mingw x64_mingw]
+  gem 'debug', '~> 1.10.0', platforms: %i[mri windows]
   gem 'rubocop', '~> 1.79.2', require: false
   gem 'rubocop-performance', '~> 1.25.0', require: false
   gem 'rubocop-rails', '~> 2.30.3', require: false

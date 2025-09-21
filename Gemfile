@@ -31,7 +31,7 @@ gem 'redis', '~> 5.0' # Use Redis adapter to run Action Cable in production
 # An ActionMailer adapter to send email using SendGrid's HTTPS Web API (instead of SMTP).
 gem 'rack-attack', '>= 6.7' # Rack middleware for blocking & throttling abusive requests (Rack 3 compatible)
 # gem 'sendgrid-actionmailer', '~> 3.2'
-gem 'brevo'
+# gem 'brevo'
 gem 'simple_form', '~> 5.3' # Gem to pimp up forms
 gem 'sitemap_generator' # A dynamic sitemap generator gem for the Ruby on Rails framework
 gem 'sprockets-rails', '>= 3.5' # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]

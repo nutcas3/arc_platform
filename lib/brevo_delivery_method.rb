@@ -8,6 +8,8 @@ class BrevoDeliveryMethod
   end
 
   def deliver!(mail)
+    validate_mail!(mail)
+
     api_instance = Brevo::TransactionalEmailsApi.new
     send_smtp_email = build_email(mail)
 
@@ -16,11 +18,18 @@ class BrevoDeliveryMethod
 
   private
 
+  def validate_mail!(mail)
+    raise ArgumentError, 'Mail object cannot be nil' if mail.nil?
+    raise ArgumentError, 'Mail must have from address' if mail.from.blank?
+    raise ArgumentError, 'Mail must have to address' if mail.to.blank?
+    raise ArgumentError, 'Mail must have subject' if mail.subject.blank?
+  end
+
   def build_email(mail)
     Brevo::SendSmtpEmail.new(
       sender: {
         email: @settings[:default_sender_email] || mail.from.first,
-        name: 'Africa Ruby Community'
+        name: @settings[:sender_name] || 'Africa Ruby Community'
       },
       to: recipients(mail),
       subject: mail.subject,

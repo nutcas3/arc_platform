@@ -33,7 +33,6 @@ gem 'rack-attack', '>= 6.7' # Rack middleware for blocking & throttling abusive 
 # gem 'sendgrid-actionmailer', '~> 3.2'
 gem 'brevo'
 gem 'simple_form', '~> 5.3' # Gem to pimp up forms
-gem 'brevo'
 gem 'sitemap_generator' # A dynamic sitemap generator gem for the Ruby on Rails framework
 gem 'sprockets-rails', '>= 3.5' # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'stimulus-rails', '>= 1.3' # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]

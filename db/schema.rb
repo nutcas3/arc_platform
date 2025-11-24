@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_11_24_144436) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_24_182731) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -272,6 +272,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_24_144436) do
     t.index ["name"], name: "motor_tags_name_unique_index", unique: true
   end
 
+  create_table "project_contributors", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id", "user_id"], name: "index_project_contributors_on_project_id_and_user_id", unique: true
+    t.index ["project_id"], name: "index_project_contributors_on_project_id"
+    t.index ["user_id"], name: "index_project_contributors_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -286,8 +297,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_24_144436) do
     t.string "preview_link"
     t.string "git_link"
     t.integer "featured_order"
+    t.string "slug"
     t.index ["chapter_id"], name: "index_projects_on_chapter_id"
     t.index ["featured"], name: "index_projects_on_featured"
+    t.index ["slug"], name: "index_projects_on_slug", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -338,6 +351,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_11_24_144436) do
   add_foreign_key "motor_note_tag_tags", "motor_note_tags", column: "tag_id"
   add_foreign_key "motor_note_tag_tags", "motor_notes", column: "note_id"
   add_foreign_key "motor_taggable_tags", "motor_tags", column: "tag_id"
+  add_foreign_key "project_contributors", "projects"
+  add_foreign_key "project_contributors", "users"
   add_foreign_key "projects", "chapters"
   add_foreign_key "users_chapters", "chapters"
   add_foreign_key "users_chapters", "users"

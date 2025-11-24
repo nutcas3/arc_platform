@@ -36,7 +36,7 @@ if defined?(Project)
 
   # Create Featured Project
   Project.find_or_create_by!(name: 'ARC Platform') do |p|
-    p.description = 'The official platform for the African Ruby Community. It connects developers, showcases projects, and lists events across the continent. Built with Rails 8 and Tailwind CSS.'
+    p.description = 'The official platform for the African Ruby Community.'
     p.intro = 'Connecting Ruby developers across Africa'
     p.chapter = chapter
     p.owner_name = 'ARC Team'
@@ -52,23 +52,23 @@ if defined?(Project)
     {
       name: 'RubyPay',
       intro: 'Seamless payments for African businesses',
-      description: 'A Ruby gem that integrates with major African payment gateways like M-Pesa, Paystack, and Flutterwave. Simplifies payment processing for Rails applications.',
-      owner: 'Juma Allan',
+      description: 'A Ruby gem that integrates with major African payment gateways like M-Pesa, Paystack, and Pesapal.',
+      owner: 'Juma Githinji',
       git: 'https://github.com/example/rubypay',
       preview_link: 'https://rubycommunity.africa'
     },
     {
       name: 'Savannah HR',
       intro: 'HR management for remote teams',
-      description: 'An open-source HR management system designed for remote-first companies in Africa. Handles leave management, payroll, and performance reviews.',
-      owner: 'Sarah Wanjiku',
+      description: 'An open-source HR management system designed for remote-first companies in Africa.',
+      owner: 'Sarah Elchapo',
       git: 'https://github.com/example/savannah-hr',
       preview_link: 'https://rubycommunity.africa'
     },
     {
       name: 'AgriTech Connect',
       intro: 'Connecting farmers to markets',
-      description: 'A mobile-friendly web application that helps small-scale farmers connect directly with buyers, eliminating middlemen and increasing profits.',
+      description: 'A mobile-friendly web application that helps small-scale farmers connect directly with buyers.',
       owner: 'David Ochieng',
       git: 'https://github.com/example/agritech',
       preview_link: 'https://rubycommunity.africa'
@@ -76,7 +76,7 @@ if defined?(Project)
     {
       name: 'EduTrack',
       intro: 'School management system',
-      description: 'Comprehensive school management software for primary and secondary schools. Tracks attendance, grades, and fee payments.',
+      description: 'Comprehensive school management software for primary and secondary schools.',
       owner: 'Grace Muthoni',
       git: 'https://github.com/example/edutrack',
       preview_link: 'https://rubycommunity.africa'
@@ -84,7 +84,7 @@ if defined?(Project)
     {
       name: 'HealthLink',
       intro: 'Telemedicine platform',
-      description: 'Connects patients with doctors for virtual consultations. Features appointment scheduling, video calls, and digital prescriptions.',
+      description: 'Connects patients with doctors for virtual consultations.',
       owner: 'Samuel Kimani',
       git: 'https://github.com/example/healthlink',
       preview_link: 'https://rubycommunity.africa'
@@ -92,7 +92,7 @@ if defined?(Project)
     {
       name: 'LogiMove',
       intro: 'Logistics and delivery tracking',
-      description: 'Real-time tracking solution for logistics companies. Optimizes routes and provides delivery updates to customers.',
+      description: 'Real-time tracking solution for logistics companies.',
       owner: 'Brian Kipkorir',
       git: 'https://github.com/example/logimove',
       preview_link: 'https://rubycommunity.africa'
@@ -100,7 +100,7 @@ if defined?(Project)
     {
       name: 'EstateManager',
       intro: 'Real estate property management',
-      description: 'Helps landlords and property managers track rent payments, maintenance requests, and tenant leases.',
+      description: 'Helps landlords and property managers track rent payments, maintenance requests, tenant leases.',
       owner: 'Faith Chebet',
       git: 'https://github.com/example/estatemanager',
       preview_link: 'https://rubycommunity.africa'
@@ -108,7 +108,7 @@ if defined?(Project)
     {
       name: 'EventHub',
       intro: 'Discover local tech events',
-      description: 'A platform to discover and register for technology conferences, meetups, and workshops happening in your city.',
+      description: 'A platform to discover and register for technology conferences, meetups, and workshops happening.',
       owner: 'Kevin Maina',
       git: 'https://github.com/example/eventhub',
       preview_link: 'https://rubycommunity.africa'
@@ -116,16 +116,16 @@ if defined?(Project)
     {
       name: 'CharityFlow',
       intro: 'Donation tracking for NGOs',
-      description: 'Transparency tool for NGOs to track incoming donations and outgoing project expenses. Generates reports for donors.',
-      owner: 'Mercy Achieng',
+      description: 'Transparency tool for NGOs to track incoming donations and outgoing project expenses.',
+      owner: 'Mercy Chebet',
       git: 'https://github.com/example/charityflow',
       preview_link: 'https://rubycommunity.africa'
     },
     {
       name: 'JobFinder',
       intro: 'Tech jobs in Africa',
-      description: 'A curated job board for software engineering roles across Africa. Features filtering by country, stack, and remote options.',
-      owner: 'Paul Njoroge',
+      description: 'A curated job board for software engineering roles across Africa.',
+      owner: 'Paul Amiro',
       git: 'https://github.com/example/jobfinder',
       preview_link: 'https://rubycommunity.africa'
     }

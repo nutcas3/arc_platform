@@ -23,6 +23,8 @@
             <li><a href="#">Projects</a></li>
           <% end %>
 
+          <li><%= link_to 'Projects', projects_path %></li>
+
           <li><%= link_to 'Learning Materials', learning_materials_path %></li>
 
           <% if user_signed_in? %>

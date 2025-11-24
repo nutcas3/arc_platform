@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_15_123557) do
+ActiveRecord::Schema[8.0].define(version: 2025_11_24_144436) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -53,16 +53,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_15_123557) do
     t.index ["name"], name: "index_chapters_on_name", unique: true
   end
 
-  create_table "conferences", force: :cascade do |t|
-    t.string "title", null: false
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.string "location"
-    t.integer "status", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -78,12 +68,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_15_123557) do
   end
 
   create_table "learning_materials", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "level", default: 0, null: false
+    t.string "title"
     t.string "thumbnail"
-    t.string "link", null: false
-    t.boolean "featured", default: false, null: false
-    t.text "description"
+    t.string "link"
+    t.integer "level"
+    t.boolean "featured"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["featured"], name: "index_learning_materials_on_featured"
@@ -291,7 +280,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_15_123557) do
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "featured", default: false, null: false
+    t.string "owner_name"
+    t.text "intro"
+    t.string "preview_link"
+    t.string "git_link"
+    t.integer "featured_order"
     t.index ["chapter_id"], name: "index_projects_on_chapter_id"
+    t.index ["featured"], name: "index_projects_on_featured"
   end
 
   create_table "users", force: :cascade do |t|

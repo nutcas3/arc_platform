@@ -1,0 +1,39 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <% projects.each do |project| %>
+    <!-- Project Card -->
+    <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+        <div class="bg-gray-300 aspect-video overflow-hidden">
+            <% if project.image.attached? %>
+                <%= image_tag project.image, class: "w-full h-full object-cover" %>
+            <% end %>
+        </div>
+        <div class="p-6">
+            <h3 class="text-lg font-semibold mb-2"><%= project.name %></h3>
+            <p class="text-sm text-gray-600 mb-4">Project Intro: <%= project.intro %></p>
+            <div class="flex gap-4 text-sm">
+                <% if project.preview_link.present? %>
+                <div>
+                    <span class="text-gray-700">Preview: </span>
+                    <a href="<%= project.preview_link %>" class="text-red-600 font-medium hover:underline" target="_blank">projectlink</a>
+                </div>
+                <% end %>
+                <% if project.git_link.present? %>
+                <div class="flex items-center gap-1">
+                  <%= link_to project.git_link, target: "_blank", class: "inline-flex items-center gap-1 text-gray-700 hover:text-gray-900" do %>
+                    <i class="fab fa-github fa-lg"></i>:
+                    <span class="gitlink-text">gitlink</span>
+                  <% end %>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
+
+<!-- Pagination (if needed, using Pagy) -->
+<% if pagy.pages > 1 %>
+    <div class="mt-8 flex justify-center">
+        <%== pagy_nav(pagy) %>
+    </div>
+<% end %>

@@ -1,12 +1,20 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Projects</h1>
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
-</div>
+    <!-- Search Bar -->
+    <%= render 'search_bar' %>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Page Title -->
+        <h1 class="text-4xl font-bold text-red-600 mb-12">Projects</h1>
+
+        <!-- Featured Section -->
+        <%= render 'featured_project', featured_project: @featured_project %>
+
+        <!-- Projects Grid -->
+        <section>
+            <%= render 'projects', projects: @projects, pagy: @pagy %>
+        </section>
+    </main>
+
+

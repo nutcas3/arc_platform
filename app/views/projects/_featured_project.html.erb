@@ -1,0 +1,60 @@
+<% if featured_project %>
+  <%= turbo_frame_tag "featured_project" do %>
+    <section class="mb-16">
+      <div class="grid grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-red-600 mb-2">Featured</h2>
+          <p class="text-sm text-gray-600 mb-6">By: <span class="text-red-600"><%= featured_project.chapter.name %></span></p>
+
+          <h3 class="text-xl font-semibold mb-3"><%= featured_project.name %></h3>
+          <div class="mb-4">
+            <p class="text-sm font-medium text-gray-700 mb-1">Project Intro:</p>
+            <p class="text-sm text-gray-600"><%= featured_project.intro %></p>
+          </div>
+
+          <div class="flex gap-6 text-sm">
+            <% if featured_project.preview_link.present? %>
+              <div>
+                <span class="text-gray-700">Preview: </span>
+                <a href="<%= featured_project.preview_link %>" class="text-red-600 font-medium hover:underline" target="_blank">projectlink</a>
+              </div>
+            <% end %>
+            <% if featured_project.git_link.present? %>
+              <div class="flex items-center gap-1">
+                <a href="<%= featured_project.git_link %>" class="flex items-center gap-1 text-red-600 hover:text-red-700" target="_blank">
+                  <i class="fab fa-github fa-2x text-gray-700"></i>
+
+                  <span>gitlink</span>
+                </a>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="bg-blue-100 rounded-lg p-8 aspect-video flex items-center justify-center overflow-hidden">
+          <% if featured_project.image.attached? %>
+            <%= image_tag featured_project.image, class: "w-full h-full object-cover" %>
+          <% else %>
+            <div class="text-center text-blue-300">Featured Project Image</div>
+          <% end %>
+        </div>
+      </div>
+
+      <!-- Carousel Controls -->
+      <div class="flex justify-end items-center gap-4 mt-8">
+        <div class="flex gap-2">
+          <% @total_featured.times do |i| %>
+            <button class="w-3 h-3 rounded-full <%= i == (@current_offset % @total_featured) ? 'bg-red-600' : 'bg-gray-300' %>"></button>
+          <% end %>
+        </div>
+        <% current_position = @current_offset % @total_featured %>
+        <% unless current_position == 0 %>
+          <%= link_to "← Prev", projects_path(featured_offset: @current_offset - 1), class: "text-gray-800 font-medium hover:text-red-600", data: { turbo_frame: "featured_project" } %>
+        <% end %>
+        <% unless current_position == @total_featured - 1 %>
+          <%= link_to "Next →", projects_path(featured_offset: @current_offset + 1), class: "text-gray-800 font-medium hover:text-red-600", data: { turbo_frame: "featured_project" } %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+<% end %>

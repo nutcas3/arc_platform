@@ -14,6 +14,8 @@
 
       <li class="hover:text-red-600 hover:underline"><%= link_to 'Learning materials', learning_materials_path %></li>
 
+      <li class="hover:text-red-600 hover:underline"><%= link_to 'Projects', projects_path %></li>
+
       <% if FeatureFlag.find_by(name: 'projects').try(:enabled) %>
         <li class="hover:text-red-600 hover:underline"><%= link_to 'Projects', '#' %></li>
       <% end %>

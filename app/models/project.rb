@@ -52,15 +52,15 @@ class Project < ApplicationRecord
   # Scopes
   scope :featured, -> { where(featured: true).order(:featured_order, :created_at) }
   scope :not_featured, -> { where(featured: false) }
-  scope :search, ->(query) {
-    where("name ILIKE ? OR description ILIKE ? OR intro ILIKE ?", 
-          "%#{sanitize_sql_like(query)}%", 
-          "%#{sanitize_sql_like(query)}%", 
+  scope :search, lambda { |query|
+    where('name ILIKE ? OR description ILIKE ? OR intro ILIKE ?',
+          "%#{sanitize_sql_like(query)}%",
+          "%#{sanitize_sql_like(query)}%",
           "%#{sanitize_sql_like(query)}%")
   }
 
   # Methods
-  def has_image?
+  def image?
     image.attached?
   end
 
@@ -93,4 +93,3 @@ class Project < ApplicationRecord
     self.slug = candidate_slug
   end
 end
-

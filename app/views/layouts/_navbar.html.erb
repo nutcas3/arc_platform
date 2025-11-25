@@ -18,11 +18,7 @@
           <% end %>
 
           <li><%= link_to 'Chapters', chapters_path %></li>
-
-          <% if FeatureFlag.find_by(name: 'projects').try(:enabled) %>
-            <li><a href="#">Projects</a></li>
-          <% end %>
-
+          <li><%= link_to 'Projects', projects_path %></li>
           <li><%= link_to 'Learning Materials', learning_materials_path %></li>
 
           <% if user_signed_in? %>
@@ -58,11 +54,8 @@
         <%= link_to 'Chapters', chapters_path,
                     class: "hover:text-red-600" %>
 
-        <% if FeatureFlag.find_by(name: 'projects').try(:enabled) %>
-          <a href="#" class="hover:text-red-600">
-            Projects
-          </a>
-        <% end %>
+        <%= link_to 'Projects', projects_path,
+                    class: "hover:text-red-600" %>
 
         <%= link_to 'Learning Materials', learning_materials_path,
                     class: 'hover:text-red-600' %>

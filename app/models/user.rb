@@ -47,6 +47,8 @@ class User < ApplicationRecord
   # Associations
   has_many :users_chapters, dependent: :nullify
   has_many :chapters, through: :users_chapters
+  has_many :project_contributors, dependent: :destroy
+  has_many :contributed_projects, through: :project_contributors, source: :project
 
   # Callbacks
   before_create :set_defaults # Set model defaults before create

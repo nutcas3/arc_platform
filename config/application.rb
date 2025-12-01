@@ -23,5 +23,14 @@ module ArcPlatform
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    # Set default locale to English
+    config.i18n.default_locale = :en
+    
+    # Available locales for the application
+    config.i18n.available_locales = [:en, :sw, :fr]
+    
+    # Load all locale files in config/locales/
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   end
 end

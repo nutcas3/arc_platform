@@ -1,10 +1,53 @@
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
+# English translations for Arc Platform
+# To learn more, please read the Rails Internationalization guide:
+# https://guides.rubyonrails.org/i18n.html
 
 en:
+  # Common translations
+  common:
+    actions:
+      save: 'Save'
+      cancel: 'Cancel'
+      edit: 'Edit'
+      delete: 'Delete'
+      back: 'Back'
+      submit: 'Submit'
+      confirm: 'Are you sure?'
+    messages:
+      success: 'Operation completed successfully'
+      error: 'An error occurred'
+      not_found: 'Record not found'
+      unauthorized: 'You are not authorized to perform this action'
+  
+  # Authentication and authorization
   unauthorized:
     sign_in: 'Please sign in to perform the action'
-
+    
+  # Flash messages
+  flash:
+    notice: 'Notice'
+    alert: 'Alert'
+    success: 'Success'
+    error: 'Error'
+  
+  # Models
+  activerecord:
+    models:
+      chapter: 'Chapter'
+      project: 'Project'
+      country: 'Country'
+    attributes:
+      chapter:
+        title: 'Title'
+        description: 'Description'
+      project:
+        name: 'Name'
+        description: 'Description'
+      country:
+        name: 'Name'
+        code: 'Code'
+  
+  # Controllers
   chapters:
     create:
       success: 'Chapter was successfully created.'
@@ -29,10 +72,12 @@ en:
     destroy:
       success: 'Project was successfully destroyed.'
 
+  # Devise and authentication
   registrations:
     bot_detection_failed_alert: "Sorry, we couldn't process your request."
     turnstile_forbidden_error: "We had a problem creating your account."
 
+  # Turnstile (CAPTCHA)
   turnstile:
     warnings:
       pass: "Turnstile: PASS secret in use. All checks passed. Use FAIL secret for failure tests or real secret in production."
@@ -42,3 +87,16 @@ en:
     errors:
       registration_failed: 'Please complete the Turnstile challenge to create an account.'
       login_failed: 'Please complete the Turnstile challenge to sign in.'
+  
+  # Date and time formats
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+  
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"

@@ -9,28 +9,28 @@ module LocaleSwitcher
 
   private
 
-  def switch_locale(&action)
+  def switch_locale(&)
     locale = locale_from_params || locale_from_session || locale_from_header || I18n.default_locale
-    I18n.with_locale(locale, &action)
+    I18n.with_locale(locale, &)
   end
 
   def locale_from_params
     locale = params[:locale]
     return locale if locale.present? && I18n.available_locales.include?(locale.to_sym)
-    
+
     nil
   end
 
   def locale_from_session
     locale = session[:locale]
     return locale if locale.present? && I18n.available_locales.include?(locale.to_sym)
-    
+
     nil
   end
 
   def locale_from_header
     return nil unless request.env['HTTP_ACCEPT_LANGUAGE']
-    
+
     # Parse Accept-Language header and find the first available locale
     accepted_locales = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/[a-z]{2}/)
     accepted_locales.find { |locale| I18n.available_locales.include?(locale.to_sym) }

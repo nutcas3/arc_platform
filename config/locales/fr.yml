@@ -1,0 +1,101 @@
+# French translations for Arc Platform
+# Traductions françaises pour Arc Platform
+
+fr:
+  # Common translations
+  common:
+    actions:
+      save: 'Enregistrer'
+      cancel: 'Annuler'
+      edit: 'Modifier'
+      delete: 'Supprimer'
+      back: 'Retour'
+      submit: 'Soumettre'
+      confirm: 'Êtes-vous sûr?'
+    messages:
+      success: 'Opération réussie'
+      error: 'Une erreur est survenue'
+      not_found: 'Enregistrement introuvable'
+      unauthorized: "Vous n'êtes pas autorisé à effectuer cette action"
+  
+  # Authentication and authorization
+  unauthorized:
+    sign_in: 'Veuillez vous connecter pour effectuer cette action'
+    
+  # Flash messages
+  flash:
+    notice: 'Avis'
+    alert: 'Alerte'
+    success: 'Succès'
+    error: 'Erreur'
+  
+  # Models
+  activerecord:
+    models:
+      chapter: 'Chapitre'
+      project: 'Projet'
+      country: 'Pays'
+    attributes:
+      chapter:
+        title: 'Titre'
+        description: 'Description'
+      project:
+        name: 'Nom'
+        description: 'Description'
+      country:
+        name: 'Nom'
+        code: 'Code'
+  
+  # Controllers
+  chapters:
+    create:
+      success: 'Le chapitre a été créé avec succès.'
+    update:
+      success: 'Le chapitre a été mis à jour avec succès.'
+    destroy:
+      success: 'Le chapitre a été supprimé avec succès.'
+
+  countries:
+    create:
+      success: 'Le pays a été créé avec succès.'
+    update:
+      success: 'Le pays a été mis à jour avec succès.'
+    destroy:
+      success: 'Le pays a été supprimé avec succès.'
+
+  projects:
+    create:
+      success: 'Le projet a été créé avec succès.'
+    update:
+      success: 'Le projet a été mis à jour avec succès.'
+    destroy:
+      success: 'Le projet a été supprimé avec succès.'
+
+  # Devise and authentication
+  registrations:
+    bot_detection_failed_alert: "Désolé, nous n'avons pas pu traiter votre demande."
+    turnstile_forbidden_error: "Nous avons rencontré un problème lors de la création de votre compte."
+
+  # Turnstile (CAPTCHA)
+  turnstile:
+    warnings:
+      pass: "Turnstile: Secret PASS utilisé. Tous les contrôles sont passés. Utilisez le secret FAIL pour les tests d'échec ou le secret réel en production."
+      fail_mismatch: "Turnstile: Clé de site FAIL avec un secret non-FAIL. Cela peut donner des résultats PASS inattendus."
+      verification_failed: "La vérification Turnstile a échoué: %{errors}"
+      verification_error: "Erreur de vérification Turnstile (tentative %{attempt}/%{max}): %{error}"
+    errors:
+      registration_failed: 'Veuillez compléter le défi Turnstile pour créer un compte.'
+      login_failed: 'Veuillez compléter le défi Turnstile pour vous connecter.'
+  
+  # Date and time formats
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d %B %Y"
+      short: "%d %b"
+  
+  time:
+    formats:
+      default: "%a %d %b %Y %H:%M:%S %z"
+      long: "%d %B %Y %H:%M"
+      short: "%d %b %H:%M"

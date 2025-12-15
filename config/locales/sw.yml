@@ -1,0 +1,101 @@
+# Kiswahili translations for Arc Platform
+# Tafsiri za Kiswahili kwa Arc Platform
+
+sw:
+  # Common translations
+  common:
+    actions:
+      save: 'Hifadhi'
+      cancel: 'Ghairi'
+      edit: 'Hariri'
+      delete: 'Futa'
+      back: 'Rudi'
+      submit: 'Wasilisha'
+      confirm: 'Je, una uhakika?'
+    messages:
+      success: 'Operesheni imekamilika kwa mafanikio'
+      error: 'Hitilafu imetokea'
+      not_found: 'Rekodi haijapatikana'
+      unauthorized: 'Huna ruhusa ya kufanya kitendo hiki'
+  
+  # Authentication and authorization
+  unauthorized:
+    sign_in: 'Tafadhali ingia ili kufanya kitendo hiki'
+    
+  # Flash messages
+  flash:
+    notice: 'Taarifa'
+    alert: 'Tahadhari'
+    success: 'Mafanikio'
+    error: 'Hitilafu'
+  
+  # Models
+  activerecord:
+    models:
+      chapter: 'Sura'
+      project: 'Mradi'
+      country: 'Nchi'
+    attributes:
+      chapter:
+        title: 'Kichwa'
+        description: 'Maelezo'
+      project:
+        name: 'Jina'
+        description: 'Maelezo'
+      country:
+        name: 'Jina'
+        code: 'Msimbo'
+  
+  # Controllers
+  chapters:
+    create:
+      success: 'Sura imeundwa kwa mafanikio.'
+    update:
+      success: 'Sura imesasishwa kwa mafanikio.'
+    destroy:
+      success: 'Sura imefutwa kwa mafanikio.'
+
+  countries:
+    create:
+      success: 'Nchi imeundwa kwa mafanikio.'
+    update:
+      success: 'Nchi imesasishwa kwa mafanikio.'
+    destroy:
+      success: 'Nchi imefutwa kwa mafanikio.'
+
+  projects:
+    create:
+      success: 'Mradi umeundwa kwa mafanikio.'
+    update:
+      success: 'Mradi umesasishwa kwa mafanikio.'
+    destroy:
+      success: 'Mradi umefutwa kwa mafanikio.'
+
+  # Devise and authentication
+  registrations:
+    bot_detection_failed_alert: "Samahani, hatukuweza kushughulikia ombi lako."
+    turnstile_forbidden_error: "Tulikuwa na tatizo la kuunda akaunti yako."
+
+  # Turnstile (CAPTCHA)
+  turnstile:
+    warnings:
+      pass: "Turnstile: Siri ya PASS inatumika. Ukaguzi wote umepita. Tumia siri ya FAIL kwa majaribio ya kushindwa au siri halisi katika uzalishaji."
+      fail_mismatch: "Turnstile: Sitekey ya FAIL na siri isiyo ya FAIL. Hii inaweza kutoa matokeo ya PASS yasiyotarajiwa."
+      verification_failed: "Uthibitisho wa Turnstile umeshindwa: %{errors}"
+      verification_error: "Hitilafu ya uthibitisho wa Turnstile (jaribio %{attempt}/%{max}): %{error}"
+    errors:
+      registration_failed: 'Tafadhali kamilisha changamoto ya Turnstile ili kuunda akaunti.'
+      login_failed: 'Tafadhali kamilisha changamoto ya Turnstile ili kuingia.'
+  
+  # Date and time formats
+  date:
+    formats:
+      default: "%Y-%m-%d"
+      long: "%d %B, %Y"
+      short: "%d %b"
+  
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%d %B, %Y %H:%M"
+      short: "%d %b %H:%M"
